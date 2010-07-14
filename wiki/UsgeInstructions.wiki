@@ -1,0 +1,5 @@
+=Usage instructions=
+
+  # Copy the BuildAnalyzer.dll to the project directory or add it to the path environment variable
+  # Build with MSBuild mysolution.sln /l:BuildAnalyzer.dll to enable analytics, add other switches as you like
+  # Open the report file, mysolution.svg in your favourite svg viewer, Firefox for example 
