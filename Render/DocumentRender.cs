@@ -54,7 +54,7 @@ namespace BuildAnalyzer.Render
 
             new TaskSummaryRender(svg, taskSummary, colorTable).Render(new Point(10, height));
             height += (new List<TaskSummary>(taskSummary).Count + 1)*normal.RowHeight+DocumentProperties.DocumentMargin;
-            svg.Size = new Size(80 + (int)finished.TotalMilliseconds / scale + DocumentProperties.DocumentMargin, height);
+            svg.Size = new Size(Math.Max(DocumentProperties.DocumentMinimumWidth, 80 + (int)finished.TotalMilliseconds / scale + DocumentProperties.DocumentMargin), height);
             svg.Save(parameters.ReportFilename);
         }
     }
