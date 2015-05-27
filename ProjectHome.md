@@ -1,0 +1,1 @@
+Tool to visualize what build tasks MSBuild is executing. Hooks into the MSBuild process as a custom logger.
