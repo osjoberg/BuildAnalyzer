@@ -32,12 +32,12 @@ namespace BuildAnalyzer.Logger
 
         void EventSource_TaskStarted(object sender, TaskStartedEventArgs e)
         {
-            statistics.Add(new TaskIdentifier(e.BuildEventContext.NodeId, e.ThreadId, e.BuildEventContext.TaskId), new TaskInformation(e.TaskName, stopwatch.Elapsed));
+            statistics.Add(new TaskIdentifier(e.BuildEventContext.NodeId, e.BuildEventContext.TaskId), new TaskInformation(e.TaskName, stopwatch.Elapsed));
         }
 
         void EventSource_TaskFinished(object sender, TaskFinishedEventArgs e)
         {
-            statistics[new TaskIdentifier(e.BuildEventContext.NodeId, e.ThreadId, e.BuildEventContext.TaskId)].Finish(stopwatch.Elapsed);
+            statistics[new TaskIdentifier(e.BuildEventContext.NodeId, e.BuildEventContext.TaskId)].Finish(stopwatch.Elapsed);
         }
 
         public void Shutdown()
